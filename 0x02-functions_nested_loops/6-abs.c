@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _abs: print the absolute value of n
+ * _abs - print the absolute value of n
  * @n: the value to be checked
- * Return: number in pos if is neg
+ * Return: Always 0 (Success)
  */
 
 int _abs(int n)
