@@ -10,8 +10,6 @@ int print_last_digit(int c)
 {
 	if (c < 0)
 		c *= -1;
-	int i;
 
-	i = c % 10;
-	return (i);
+	return (c % 10);
 }
