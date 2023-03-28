@@ -1,17 +1,22 @@
-#include <stdio.h>
 #include "main.h"
+#include <string.h>
+
 /**
- * puts2 - the function name
- * _putchar - a header function that inputs character
- * @str: string parameter
+ * puts2 - function that prints every other character of a string,
+ *		starting with the first character.
+ * @str: string to print
  */
+
 void puts2(char *str)
 {
-	int i;
+	int len = 0;
+	int i = 0;
 
-	for (i = 0; str[i] != '\0'; i += 2)
-	{
+	while (str[i++])
+		len++;
+
+	for (i = 0; i < len; i += 2)
 		_putchar(str[i]);
-	}
+
 	_putchar('\n');
 }
