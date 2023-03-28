@@ -1,22 +1,29 @@
-#include <stdio.h>
-#include <string.h>
 #include "main.h"
+#include <string.h>
+#include <math.h>
+
 /**
- * puts_half - the function name
- * _putchar - a header function that inputs character
- * @str: string parameter
+ * puts_half - function that prints half of a string
+ * @str: string to print
  */
 
 void puts_half(char *str)
 {
 	int len = strlen(str);
+	int i;
 
-	int i = len / 2;
-
-	while (str[i] != '\0')
+	if ((len % 2) == 0)
 	{
-		_putchar(str[i]);
-		++i;
+		for (i = len / 2; i < len; i++)
+			_putchar(str[i]);
 	}
+	else
+	{
+		int div = round(len / 2);
+
+		for (i = div + 1; i < len; i++)
+			_putchar(str[i]);
+	}
+
 	_putchar('\n');
 }
