@@ -1,20 +1,48 @@
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
+#include <time.h>
 
-#define PASSWORD "MySuperSecurePassword"
+/**
+ * main - program that generates random valid passwords
+ * Return: on success (0), on error (1)
+ */
 
-int main(int argc, char **argv)
+int main(void)
 {
-    if (argc != 2) {
-        printf("Usage: %s password\n", argv[0]);
-        return 1;
-    }
+	char password[90];
+	int index = 0, sum = 0, first_half, second_half;
 
-    if (strcmp(argv[1], PASSWORD) == 0) {
-        printf("Tada! congrats\n");
-    } else {
-        printf("Invalid password\n");
-    }
+	srand(time(0));
+	while (sum <= 2771)
+	{
+		password[index] = 33 + rand() % 94;
+		sum += password[index++];
+	}
+	password[index] = '\0';
+	if (sum != 2772)
+	{
+		first_half = (sum - 2772) / 2;
+		second_half = (sum - 2772) / 2;
 
-    return 0;
+		if ((sum - 2772) % 2 != 0)
+			first_half++;
+		for (index = 0; password[index]; index++)
+		{
+			if (password[index] >= (33 + first_half))
+			{
+				password[index] -= first_half;
+				break;
+			}
+		}
+		for (index = 0; password[index]; index++)
+		{
+			if (password[index] >= (33 + second_half))
+			{
+				password[index] -= second_half;
+				break;
+			}
+		}
+	}
+	printf("%s\n", password);
+	return (0);
 }
