@@ -1,8 +1,7 @@
-
 /**
  * reset_to_98 - the function name
  * * - used to access the value pointed by the pointer
- * int  n - the variable name
+ * @n: the variable name
  */
 
 void reset_to_98(int *n)
