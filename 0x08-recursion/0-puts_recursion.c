@@ -1,6 +1,5 @@
 #include "main.h"
-
- /**
+/**
  *_puts_recursion - function Prints a string followed by a new line
  * @s: string
  * Return: On success 1.
