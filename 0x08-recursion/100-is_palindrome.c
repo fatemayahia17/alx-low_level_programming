@@ -4,19 +4,18 @@
  * is_palindrome - function that returns 1 or 0
  *		if a string is a palindrome and 0 if not.
  * @s: first input
- * Return: Always (0) success.
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
 
-int is_palindrome(char *s)
+void _puts_recursion(char *s)
 {
-	int i, n = strlen(s);
-
-	for (i = 0; i <= s[i]; ++i)
+	if (*s == 0)
 	{
-		if (s[i] != s[n - 1 - i])
-		{
-			return (0);
-		}
+		_putchar('\n');
+		return;
 	}
-	return (1);
+	_putchar(*s);
+	_puts_recursion(s + 1);
 }
