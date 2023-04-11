@@ -2,24 +2,22 @@
 #include <stdlib.h>
 
 /**
- * main - prints sum of 2 numbers
- * @argc: number of command line arguments
- * @argv:pointer to an array of command line arguments
+ * main - prints number of arguments passed into program
+ * @argc: int
+ * @argv: list
  * Return: 0
  */
-
-int main(int argc, char  *argv[])
+int main(int argc, char *argv[])
 {
-	int sum;
+	int a, b;
 
 	if (argc == 3)
 	{
-		sum = atoi(argv[1] * atoi(argv[2]);
-		printf("%d\n", sum);
+		a = atoi(argv[1]);
+		b = atoi(argv[2]);
+		printf("%d\n", a * b);
+		return (0);
 	}
-	else
-	{
-		printf("Error\n");
-		return (1);
-	}
+	printf("Error\n");
+	return (1);
 }
